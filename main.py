@@ -68,7 +68,7 @@ def complete(todo: str = typer.Argument(help="Todos abschließen")):
 
 # List Todos
 @app.command()
-def list_todo():
+def list():
     db_handler(None, None, action="list")  
 
 if __name__ == "__main__":
