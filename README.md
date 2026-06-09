@@ -1,1 +1,1 @@
-A simple Todo ClI tool we build for a school projekt.
+A simple Todo CLI tool we build for a school projekt.
