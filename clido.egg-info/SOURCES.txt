@@ -1,0 +1,10 @@
+LICENSE
+README.md
+main.py
+pyproject.toml
+clido.egg-info/PKG-INFO
+clido.egg-info/SOURCES.txt
+clido.egg-info/dependency_links.txt
+clido.egg-info/entry_points.txt
+clido.egg-info/requires.txt
+clido.egg-info/top_level.txt

@@ -1,7 +1,14 @@
 import typer
 import sqlite3
+import os
 
-con = sqlite3.connect("todo.db")
+def setup_db_path():
+    if os.name == "nt":  # Windows
+        return os.path.join(os.getenv("APPDATA"), "todo.db")
+    else:
+        return os.path.join(os.path.expanduser("~"), ".todo.db")
+
+con = sqlite3.connect(setup_db_path())
 cur = con.cursor()
 app = typer.Typer()
 
@@ -48,7 +55,7 @@ def remove(todo: str = typer.Argument(help="Todos entfernen")):
     else:
         db_handler(todo, None, action="remove")
         print("Es wurde ein Todo entfernt")
-        
+
 # Edit Todo
 @app.command()
 def edit(todo: str = typer.Argument(help="Todos bearbeiten")):
@@ -72,4 +79,5 @@ def list():
     db_handler(None, None, action="list")  
 
 if __name__ == "__main__":
+
     app()
